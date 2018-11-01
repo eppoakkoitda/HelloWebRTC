@@ -1,22 +1,26 @@
 /* eslint-disable require-jsdoc */
 $(function() {
-  // Peer object
+  // Peer objectの生成、内部でｼｸﾞﾅﾘﾝｸﾞｻｰﾊﾞｰ接続
   const peer = new Peer({
-    key:   window.__SKYWAY_KEY__,
+    key:   window.__SKYWAY_KEY__,//Key.jsに記載
     debug: 3,
   });
 
   let localStream;
   let existingCall;
 
+  //ｼｸﾞﾅﾘﾝｸﾞｻｰﾊﾞｰ接続に成功するとopenイベントが発火する
+  //Peer ID がサーバーから割り当てられる
   peer.on('open', () => {
-    $('#my-id').text(peer.id);
+    $('#my-id').text(peer.id);//ID:my-idのテキストをpeer.idに書き換え
     step1();
   });
 
   // Receiving a call
+  //着信するとcallイベントが発火
   peer.on('call', call => {
     // Answer the call automatically (instead of prompting user) for demo purposes
+    //"応答可能なら"answer関数を呼び出す
     call.answer(localStream);
     step3(call);
   });
@@ -31,6 +35,7 @@ $(function() {
     e.preventDefault();
     // Initiate a call!
     console.log($('#callto-id').val());
+    //callをpeer.call("相手のpeer ID",自分のストリーム);とみなす
     const call = peer.call($('#callto-id').val(), localStream);
     step3(call);
   });
@@ -125,6 +130,7 @@ $(function() {
       existingCall.close();
     }
     // Wait for stream on the call, then set peer video display
+    //音声・映像はstreamイベントで取得可
     call.on('stream', stream => {
       const el = $('#their-video').get(0);
       el.srcObject = stream;
