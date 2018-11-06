@@ -1,5 +1,3 @@
-'use strict';
-
 let localStream = null;
 
 navigator.mediaDevices.getUserMedia({video: true, audio: true})
