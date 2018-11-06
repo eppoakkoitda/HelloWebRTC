@@ -1,3 +1,4 @@
+$(function(){
 let localStream = null;
 
 navigator.mediaDevices.getUserMedia({video: true, audio: true})
@@ -10,3 +11,4 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
         console.error('mediaDevice.getUserMedia() error:', error);
         return;
     });
+});
