@@ -36,15 +36,15 @@ peer.on('close', function(){
 peer.on('disconnected', function(){
 });
 
-$('#make-call').submit(function(e){
-    e.preventDefault();
+(() => {
     const call = peer.call(location.search, localStream);
     setupCallEventHandlers(call);
-});
-
+})();
+/*
 $('#end-call').click(function(){
     existingCall.close();
 });
+*/
 
 peer.on('call', function(call){
     call.answer(localStream);
@@ -79,13 +79,13 @@ function removeVideo(peerId){
 }
 
 function setupMakeCallUI(){
-    $('#make-call').show();
-    $('#end-call').hide();
+    //$('#make-call').show();
+    //$('#end-call').hide();
 }
 
 function setupEndCallUI() {
-    $('#make-call').hide();
-    $('#end-call').show();
+    //$('#make-call').hide();
+    //$('#end-call').show();
 }
 
 });
