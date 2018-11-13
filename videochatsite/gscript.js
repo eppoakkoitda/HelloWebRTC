@@ -9,6 +9,8 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
         // Success
         $('#my-video').get(0).srcObject = stream;
         localStream = stream;
+
+        CallStart();
     })
     .catch(function (error) {
         // Error
@@ -36,10 +38,10 @@ peer.on('close', function(){
 peer.on('disconnected', function(){
 });
 
-(() => {
+ function CallStart(){
     const call = peer.call(location.search, localStream);
     setupCallEventHandlers(call);
-})();
+};
 /*
 $('#end-call').click(function(){
     existingCall.close();
