@@ -91,5 +91,6 @@ function setupEndCallUI() {
     $('.container2').show();
 }
 
+setupEndCallUI();//init
 
 });
