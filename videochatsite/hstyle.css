@@ -1,0 +1,46 @@
+html {
+    height: 100%;
+}
+
+body{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.container1{
+  height: 100%;
+  background: #293749;
+  display: grid;
+  grid-template:
+    "header " 45%
+    "main" 10%
+    "footer " 45%
+    /100%;
+}
+
+.container2{
+  height: 100%;
+  background: #293749;
+  display: grid;
+  grid-template:
+    "my-vid" 100%
+    /100%;
+}
+
+.main{
+  text-align: center;
+  grid-area: main;
+}
+
+.header{
+  background: #23A0F2;
+  text-align: center;
+  grid-area: header;
+}
+
+.footer{
+  background: #23A0F2;
+  text-align: center;
+  grid-area: footer;
+}
