@@ -10,7 +10,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
         $('#my-video').get(0).srcObject = stream;
         localStream = stream;
 
-        //CallStart();
+        CallStart();
     })
     .catch(function (error) {
         // Error
