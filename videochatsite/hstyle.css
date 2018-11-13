@@ -8,6 +8,10 @@ body{
   margin: 0;
 }
 
+p{
+  color: #FFF;
+}
+
 .container1{
   height: 100%;
   background: #293749;
