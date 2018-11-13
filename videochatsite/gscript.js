@@ -63,7 +63,7 @@ function setupCallEventHandlers(call){
     call.on('stream', function(stream){
     addVideo(call,stream);
     setupEndCallUI();
-    $('#their-id').text(call.remoteId);
+    //$('#their-id').text(call.remoteId);
     });
 
     call.on('close', function(){

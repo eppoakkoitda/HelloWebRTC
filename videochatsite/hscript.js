@@ -63,7 +63,7 @@ function setupCallEventHandlers(call){
     call.on('stream', function(stream){
     addVideo(call,stream);
     setupEndCallUI();
-    $('#their-id').text(call.remoteId);
+    //$('#their-id').text(call.remoteId);
     });
 
     call.on('close', function(){
@@ -82,13 +82,13 @@ function removeVideo(peerId){
 
 
 function setupMakeCallUI(){
-    //$('#make-call').show();
-    //$('#end-call').hide();
+    $('.container1').show();
+    $('.container2').hide();
 }
 
 function setupEndCallUI() {
-    //$('#make-call').hide();
-    //$('#end-call').show();
+    $('.container1').hide();
+    $('.container2').show();
 }
 
 
