@@ -11,6 +11,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
         localStream = stream;
 
         CallStart();
+        console.log("run");
     })
     .catch(function (error) {
         // Error
