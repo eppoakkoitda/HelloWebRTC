@@ -90,4 +90,8 @@ function setupEndCallUI() {
     //$('#end-call').show();
 }
 
+$('#my-video').on('click', () => {
+  console.log("aaaaaaa");
+});
+
 });
