@@ -39,7 +39,7 @@ peer.on('disconnected', function(){
 });
 
  function CallStart(){
-    const call = peer.call(location.search, localStream);
+    const call = peer.call(location.search.substring(1);, localStream);
     setupCallEventHandlers(call);
 };
 /*
