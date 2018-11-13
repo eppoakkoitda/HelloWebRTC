@@ -93,4 +93,10 @@ function setupEndCallUI() {
 
 setupMakeCallUI();//init
 
+function CopyURL(){
+  var copyTarget = $('#url').text();
+  copyTarget.select();
+  document.execCommand("Copy");
+}
+
 });
