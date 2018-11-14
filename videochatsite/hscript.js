@@ -95,7 +95,7 @@ setupMakeCallUI();//init
 
 $('#button-c').on('click', () => {
   // テキストエリアを用意する
-  var copyFrom = document.createElement("textarea");
+  var copyFrom = document.createElement("textarea").innerText;
   // テキストエリアへ値をセット
   copyFrom.textContent = document.getElementById('url-s');
 
