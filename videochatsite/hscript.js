@@ -112,6 +112,6 @@ $('#button-c').on('click', () => {
   bodyElm.removeChild(copyFrom);
   // 処理結果を返却
   return retVal;
-}
+});
 
 });
