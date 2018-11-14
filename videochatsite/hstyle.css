@@ -26,6 +26,7 @@ p{
 .main{
   text-align: center;
   grid-area: main;
+  overflow:auto;
 }
 
 .header{
