@@ -94,24 +94,31 @@ function setupEndCallUI() {
 setupMakeCallUI();//init
 
 $('#button-c').on('click', () => {
-  // テキストエリアを用意する
-  var copyFrom = document.createElement("textarea").innerText;
-  // テキストエリアへ値をセット
-  copyFrom.textContent = document.getElementById('url-s');
+  // 目的の文字列が入っている p要素を取得します。
+  var element = document.querySelector('#url-s');
+  // seletionオブジェクトを取得します。
+  var selection = window.getSelection();
+  // rangeオブジェクトを生成します。
+  var range = document.createRange();
+  // rangeオブジェクトに p要素を与えます。
+  range.selectNodeContents(element);
+  // 一旦、selectionオブジェクトの持つ rangeオブジェクトを削除します。
+  selection.removeAllRanges();
+  // 改めて先程生成した rangeオブジェクトを selectionオブジェクトに追加します。
+  selection.addRange(range);
+  console.log('選択された文字列: ', selection.toString());
+  // クリップボードにコピーします。
+  var succeeded = document.execCommand('copy');
+  if (succeeded) {
+      // コピーに成功した場合の処理です。
+      console.log('コピーが成功しました！');
+  } else {
+      // コピーに失敗した場合の処理です。
+      console.log('コピーが失敗しました!');
+  }
+  // selectionオブジェクトの持つrangeオブジェクトを全て削除しておきます。
+  selection.removeAllRanges();
 
-  // bodyタグの要素を取得
-  var bodyElm = document.getElementsByTagName("body")[0];
-  // 子要素にテキストエリアを配置
-  bodyElm.appendChild(copyFrom);
-
-  // テキストエリアの値を選択
-  copyFrom.select();
-  // コピーコマンド発行
-  var retVal = document.execCommand('copy');
-  // 追加テキストエリアを削除
-  bodyElm.removeChild(copyFrom);
-  // 処理結果を返却
-  return retVal;
 });
 
 });
