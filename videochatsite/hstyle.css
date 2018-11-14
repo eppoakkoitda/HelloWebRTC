@@ -29,12 +29,14 @@ p{
 }
 
 .header{
+  font-size:32px;
   background: #23A0F2;
   text-align: center;
   grid-area: header;
 }
 
 .footer{
+  font-size:24px;
   background: #23A0F2;
   text-align: center;
   grid-area: footer;
