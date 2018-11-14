@@ -93,9 +93,7 @@ function setupEndCallUI() {
 
 setupMakeCallUI();//init
 
-});
-
-function CopyURL(){
+$('#button').on('click', () => {
   // テキストエリアを用意する
   var copyFrom = document.createElement("textarea");
   // テキストエリアへ値をセット
@@ -113,5 +111,7 @@ function CopyURL(){
   // 追加テキストエリアを削除
   bodyElm.removeChild(copyFrom);
   // 処理結果を返却
-  //return retVal;
+  return retVal;
 }
+
+});
