@@ -93,6 +93,8 @@ function setupEndCallUI() {
 
 setupMakeCallUI();//init
 
+});
+
 function CopyURL(){
   // テキストエリアを用意する
   var copyFrom = document.createElement("textarea");
@@ -113,5 +115,3 @@ function CopyURL(){
   // 処理結果を返却
   //return retVal;
 }
-
-});
