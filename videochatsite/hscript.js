@@ -93,7 +93,7 @@ function setupEndCallUI() {
 
 setupMakeCallUI();//init
 
-$('#button').on('click', () => {
+$('#button-c').on('click', () => {
   // テキストエリアを用意する
   var copyFrom = document.createElement("textarea");
   // テキストエリアへ値をセット
