@@ -11,6 +11,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
         localStream = stream;
 
         CallStart();
+        setupMakeCallUI();//init
         console.log("run");
     })
     .catch(function (error) {
@@ -34,11 +35,12 @@ peer.on('error', function(err){
 });
 
 peer.on('close', function(){
-    removeVideo(call.remoteId);
+    setupEndCallUI();
     $("#str").text("Thank you for using.");
 });
 
 peer.on('disconnected', function(){
+    setupEndCallUI();
     $("#str").text("disconnected (Signaling Server)");
 });
 
