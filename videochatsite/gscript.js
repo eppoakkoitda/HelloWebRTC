@@ -34,7 +34,8 @@ peer.on('error', function(err){
 });
 
 peer.on('close', function(){
-    existingCall.close();
+    removeVideo(call.remoteId);
+    $("#str").text("Thank you for using.");
 });
 
 peer.on('disconnected', function(){
