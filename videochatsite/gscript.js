@@ -31,7 +31,7 @@ peer.on('open', function(){
 
 peer.on('error', function(err){
     alert(err.message);
-    alert("Please Open in Chrome, FireFox or Safari.");
+    $("#str").text("Please Open in Chrome, FireFox or Safari.");
 });
 
 peer.on('close', function(){
@@ -39,7 +39,7 @@ peer.on('close', function(){
 });
 
 peer.on('disconnected', function(){
-    alert("disconnected (Signaling Server)");
+    $("#str").text("disconnected (Signaling Server)");
 });
 
  function CallStart(){
