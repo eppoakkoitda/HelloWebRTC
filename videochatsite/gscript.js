@@ -31,12 +31,15 @@ peer.on('open', function(){
 
 peer.on('error', function(err){
     alert(err.message);
+    alert("Please Open in Chrome, FireFox or Safari.");
 });
 
 peer.on('close', function(){
+    existingCall.close();
 });
 
 peer.on('disconnected', function(){
+    alert("disconnected (Signaling Server)");
 });
 
  function CallStart(){
