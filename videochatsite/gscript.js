@@ -31,7 +31,6 @@ peer.on('open', function(){
 
 peer.on('error', function(err){
     alert(err.message);
-    $("#str").text("Please Open in Chrome, FireFox or Safari.");
 });
 
 peer.on('close', function(){
@@ -86,12 +85,12 @@ function removeVideo(peerId){
 
 function setupMakeCallUI(){
     //$('#make-call').show();
-    //$('#end-call').hide();
+    $('#str').hide();
 }
 
 function setupEndCallUI() {
     //$('#make-call').hide();
-    //$('#end-call').show();
+    $('str').show();
 }
 
 $('#my-video').on('click', () => {
