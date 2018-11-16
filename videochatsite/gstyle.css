@@ -9,14 +9,19 @@ body{
   margin: 0;
 }
 
+.container{
+
+}
+
 #my-video {
  position: absolute;
  top:0;
+ right: 0;
  width: 15%;
  height: 15%;
- background: hsla(0,100%,100%,0);
+ background: black;
  z-index: 1;
- border: 10px black;
+ border: 5px solid white;
 }
 
 #their-video {
@@ -26,5 +31,4 @@ body{
  height: 100%;
  background: hsla(0,100%,100%,0);
  z-index: 0;
- border: 2px black;
 }
